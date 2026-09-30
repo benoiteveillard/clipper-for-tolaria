@@ -6,7 +6,7 @@ Everything to paste into the Chrome Web Store developer dashboard. Keep this fil
 
 **Name:** Clipper for Tolaria
 
-**Summary** (max 132 characters, 108 used):
+**Summary** (max 132 characters, 105 used):
 
 > Clip a web page or your selection into your Tolaria vault as a clean Markdown note. Unofficial companion.
 
