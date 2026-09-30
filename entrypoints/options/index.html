@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Clipper for Tolaria – Options</title>
@@ -14,21 +14,21 @@
   <body>
     <h1>Clipper for Tolaria</h1>
 
-    <h2>Vault</h2>
-    <p>Dossier : <strong id="vault-name">aucun</strong> <small id="vault-permission"></small></p>
-    <button id="pick" type="button">Choisir le dossier du vault…</button>
+    <h2 data-i18n="optionsVault">Vault</h2>
+    <p><span data-i18n="optionsFolder">Folder:</span> <strong id="vault-name">none</strong> <small id="vault-permission"></small></p>
+    <button id="pick" type="button" data-i18n="optionsPick">Choose the vault folder…</button>
 
-    <h2>Notes</h2>
+    <h2 data-i18n="optionsNotes">Notes</h2>
     <form id="settings">
-      <label>Type par défaut <input type="text" name="type" /></label>
+      <label><span data-i18n="optionsDefaultType">Default type</span> <input type="text" name="type" /></label>
       <label>
-        Sous-dossier <input type="text" name="subfolder" placeholder="(racine du vault)" />
-        <small>Tolaria range par type, pas par dossier : la racine est recommandée.</small>
+        <span data-i18n="optionsSubfolder">Subfolder</span> <input type="text" name="subfolder" placeholder="(vault root)" data-i18n-placeholder="optionsSubfolderPlaceholder" />
+        <small data-i18n="optionsSubfolderHint">Tolaria organizes by type, not by folder: the root is recommended.</small>
       </label>
-      <label><input type="checkbox" name="authorAsWikilink" /> Auteur en wikilink (<code>"[[jane-doe]]"</code>)</label>
+      <label><input type="checkbox" name="authorAsWikilink" /> <span data-i18n="optionsAuthorWikilink">Author as wikilink</span> (<code>"[[jane-doe]]"</code>)</label>
     </form>
     <p id="error" role="alert" hidden style="color: #d33"></p>
-    <p id="saved" role="status" hidden>Enregistré.</p>
+    <p id="saved" role="status" hidden data-i18n="optionsSaved">Saved.</p>
 
     <script type="module" src="./main.ts"></script>
   </body>

@@ -1,5 +1,8 @@
+import { localizeDocument, t } from '@/lib/i18n';
 import { loadSettings, saveSettings, subfolderError } from '@/lib/settings';
 import { isAbort, loadVault, pickVault, supportsFsAccess, vaultPermission } from '@/lib/vault';
+
+localizeDocument();
 
 const form = document.getElementById('settings') as HTMLFormElement;
 const pick = document.getElementById('pick') as HTMLButtonElement;
@@ -7,7 +10,7 @@ const field = (name: string) => form.elements.namedItem(name) as HTMLInputElemen
 
 async function showVault() {
   const vault = await loadVault();
-  document.getElementById('vault-name')!.textContent = vault?.name ?? 'aucun';
+  document.getElementById('vault-name')!.textContent = vault?.name ?? t('vaultNone');
   document.getElementById('vault-permission')!.textContent = vault ? `(${await vaultPermission(vault)})` : '';
 }
 
@@ -48,5 +51,5 @@ if (supportsFsAccess()) {
   await showVault();
 } else {
   pick.disabled = true;
-  document.getElementById('vault-name')!.textContent = 'non supporté par ce navigateur';
+  document.getElementById('vault-name')!.textContent = t('fsUnsupportedOptions');
 }

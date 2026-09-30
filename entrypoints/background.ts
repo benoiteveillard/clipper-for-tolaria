@@ -1,4 +1,5 @@
 import { captureTab, clearPendingClip } from '@/lib/clip';
+import { t } from '@/lib/i18n';
 
 type ActionApi = typeof browser.action;
 type SidebarActionApi = { open(): Promise<void> };
@@ -25,7 +26,7 @@ export default defineBackground(() => {
   browser.runtime.onInstalled.addListener(() => {
     browser.contextMenus.create({
       id: MENU_ID,
-      title: 'Clip to Tolaria',
+      title: t('menuClip'),
       contexts: ['page', 'selection'],
     });
   });

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,36 +8,36 @@
   </head>
   <body>
     <main>
-      <p id="status" role="status">Clique sur l'icône de l'extension pour capturer l'onglet.</p>
+      <p id="status" role="status" data-i18n="statusIdle">Click the extension icon to capture the tab.</p>
 
       <div id="incoming" role="status" hidden>
-        <span>Nouveau clip prêt : <strong id="incoming-title"></strong></span>
+        <span><span data-i18n="incomingReady">New clip ready:</span> <strong id="incoming-title"></strong></span>
         <span class="actions">
-          <button id="incoming-replace" type="button">Remplacer</button>
-          <button id="incoming-dismiss" type="button">Garder mes modifications</button>
+          <button id="incoming-replace" type="button" data-i18n="incomingReplace">Replace</button>
+          <button id="incoming-dismiss" type="button" data-i18n="incomingKeep">Keep my edits</button>
         </span>
       </div>
 
       <form id="clip" hidden>
-        <label>Titre <input id="title" required /></label>
-        <label>Type <input id="type" /></label>
-        <label>Contenu <textarea id="body" rows="14" spellcheck="false"></textarea></label>
+        <label><span data-i18n="labelTitle">Title</span> <input id="title" required /></label>
+        <label><span data-i18n="labelType">Type</span> <input id="type" /></label>
+        <label><span data-i18n="labelContent">Content</span> <textarea id="body" rows="14" spellcheck="false"></textarea></label>
 
-        <p id="duplicate" role="status" hidden>Déjà clippée : <a id="duplicate-link"></a></p>
+        <p id="duplicate" role="status" hidden><span data-i18n="duplicateLabel">Already clipped:</span> <a id="duplicate-link"></a></p>
 
         <div class="actions">
-          <button id="save" type="submit" class="primary">Enregistrer dans le vault</button>
-          <button id="copy" type="button">Copier</button>
-          <button id="download" type="button">Télécharger .md</button>
+          <button id="save" type="submit" class="primary" data-i18n="saveToVault">Save to vault</button>
+          <button id="copy" type="button" data-i18n="copy">Copy</button>
+          <button id="download" type="button" data-i18n="downloadMd">Download .md</button>
         </div>
-        <a id="open" hidden>Ouvrir dans Tolaria →</a>
+        <a id="open" hidden data-i18n="openInTolaria">Open in Tolaria →</a>
       </form>
 
       <footer>
-        <span>Vault : <strong id="vault-name">—</strong> <small id="vault-permission"></small></span>
+        <span><span data-i18n="vaultLabel">Vault:</span> <strong id="vault-name">—</strong> <small id="vault-permission"></small></span>
         <span>
-          <button id="pick" type="button">Choisir…</button>
-          <button id="reclip" type="button">Recapturer</button>
+          <button id="pick" type="button" data-i18n="choose">Choose…</button>
+          <button id="reclip" type="button" data-i18n="recapture">Re-capture</button>
         </span>
       </footer>
     </main>

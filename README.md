@@ -57,8 +57,8 @@ For Firefox, `npm run build:firefox` produces `.output/firefox-mv2`. Firefox sup
 
 1. Click the extension icon on the page you want to keep (select some text first to clip only that).
 2. The side panel opens with the extracted note. Edit the title, type or content if needed.
-3. Click **Enregistrer dans le vault** (Save to vault). The first time, choose your vault folder and allow write access.
-4. Use **Ouvrir dans Tolaria** (Open in Tolaria) to jump to the note.
+3. Click **Save to vault**. The first time, choose your vault folder and allow write access.
+4. Use **Open in Tolaria** to jump to the note.
 
 ### Settings
 
@@ -93,7 +93,7 @@ npm test               # unit tests + snapshot tests on saved real pages
 npm run build          # production build (Chrome)
 ```
 
-The interface is currently in French (button names above are given in French, with the English meaning). Translations are welcome (see [CONTRIBUTING.md](CONTRIBUTING.md)).
+The interface is in English and French, and follows the language of your browser. New translations are welcome (see [CONTRIBUTING.md](CONTRIBUTING.md)).
 
 ### Layout
 

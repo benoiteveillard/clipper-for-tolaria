@@ -35,7 +35,8 @@ CI runs the same commands.
 - TypeScript, strict. Match the surrounding code: naming, comment density and idioms.
 - Comments say **why**, not what.
 - Keep logic that can be tested in `lib/` (no DOM or extension APIs when it can be avoided), and keep `entrypoints/` thin.
-- User-facing text is currently French. New strings follow that for now. If you'd like to add proper i18n (`browser.i18n`), open an issue first so we agree on the approach.
+- User-facing text lives in `public/_locales/<lang>/messages.json` (English is the default, French is included). Never hard-code a visible string: add a key to every language and use `t('key')` in code or `data-i18n="key"` in HTML. `tests/i18n.test.ts` checks that languages stay in sync and that no key is missing or unused.
+- To add a language, copy `public/_locales/en` to `public/_locales/<code>` (for example `de`), translate the `message` values, and keep the `$PLACEHOLDERS$` as they are. Add the language to the README if you like. Chrome picks the language from the browser's own language, so there is no setting for it.
 
 ## Tests
 

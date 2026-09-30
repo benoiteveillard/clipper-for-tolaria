@@ -1,6 +1,7 @@
 import { captureTab, loadPendingClip, onPendingClip, type PendingClip } from '@/lib/clip';
 import { findClipByUrl } from '@/lib/duplicates';
 import { copyMarkdown, downloadMarkdown } from '@/lib/fallback';
+import { localizeDocument, t } from '@/lib/i18n';
 import { noteFilename } from '@/lib/filename';
 import { buildNote, noteTitle, type ExtractedPage } from '@/lib/note';
 import { loadSettings, onSettingsChanged } from '@/lib/settings';
@@ -28,6 +29,7 @@ const duplicate = $('duplicate');
 const duplicateLink = $<HTMLAnchorElement>('duplicate-link');
 const openLink = $<HTMLAnchorElement>('open');
 
+localizeDocument();
 const SAVE_LABEL = save.textContent;
 let settings = await loadSettings();
 onSettingsChanged((next) => {
@@ -53,7 +55,7 @@ function setStatus(text: string, kind: 'info' | 'ok' | 'error' = 'info') {
 
 function render(clip: PendingClip | undefined) {
   if (!clip) return;
-  if (clip.status === 'loading') return setStatus('Extraction en cours…');
+  if (clip.status === 'loading') return setStatus(t('extracting'));
   if (clip.status === 'error') return setStatus(clip.error, 'error');
   if (isDirty()) return offerIncoming(clip.page);
   show(clip.page);
@@ -81,7 +83,7 @@ function offerIncoming(next: ExtractedPage) {
   if (page) setStatus(describe(page));
 }
 
-const describe = (p: ExtractedPage) => `${p.selection ? 'Sélection · ' : ''}${p.site || new URL(p.url).hostname}`;
+const describe = (p: ExtractedPage) => `${p.selection ? t('selectionPrefix') : ''}${p.site || new URL(p.url).hostname}`;
 
 async function lookupDuplicate(vault: FileSystemDirectoryHandle, url: string): Promise<string | undefined> {
   const segments = subfolderSegments(settings.subfolder);
@@ -94,7 +96,7 @@ function showDuplicate(vault: FileSystemDirectoryHandle, path: string) {
   duplicateLink.textContent = path;
   duplicateLink.href = tolariaLink(vault, path);
   duplicate.hidden = false;
-  save.textContent = 'Enregistrer quand même';
+  save.textContent = t('saveAnyway');
 }
 
 // Only looks when the permission is already granted: it must never trigger a prompt by itself.
@@ -118,7 +120,7 @@ function hideDuplicate() {
 }
 
 function currentNote(): string {
-  if (!page) throw new Error('Aucune page capturée.');
+  if (!page) throw new Error(t('noPageCaptured'));
   return buildNote(
     { ...page, title: title.value, markdown: body.value },
     { type: type.value.trim(), authorAsWikilink: settings.authorAsWikilink },
@@ -129,11 +131,11 @@ async function showVault() {
   if (!supportsFsAccess()) {
     save.hidden = true;
     $('pick').hidden = true;
-    $('vault-name').textContent = 'non supporté par ce navigateur (Copier / Télécharger)';
+    $('vault-name').textContent = t('fsUnsupportedPanel');
     return;
   }
   const vault = await loadVault();
-  $('vault-name').textContent = vault?.name ?? 'aucun';
+  $('vault-name').textContent = vault?.name ?? t('vaultNone');
   $('vault-permission').textContent = vault ? `(${await vaultPermission(vault)})` : '';
 }
 
@@ -153,13 +155,13 @@ form.addEventListener('submit', (event) => {
   // Stays inside the click's user activation, which requestPermission/showDirectoryPicker need.
   void run(async () => {
     const vault = (await loadVault()) ?? (await pickVault());
-    if (!(await ensurePermission(vault))) return setStatus('Accès au vault refusé.', 'error');
+    if (!(await ensurePermission(vault))) return setStatus(t('vaultAccessDenied'), 'error');
     // Another window (or an earlier click) may have saved this page since the panel last looked.
     if (duplicate.hidden && page?.url) {
       const existing = await lookupDuplicate(vault, page.url).catch(() => undefined);
       if (existing) {
         showDuplicate(vault, existing);
-        return setStatus('Cette page est déjà dans le vault : clique de nouveau pour enregistrer quand même.', 'error');
+        return setStatus(t('alreadyInVaultRetry'), 'error');
       }
     }
     const path = await writeNote(vault, settings.subfolder, noteFilename(title.value), currentNote());
@@ -167,7 +169,7 @@ form.addEventListener('submit', (event) => {
     openLink.hidden = false;
     hideDuplicate();
     markClean();
-    setStatus(`Enregistré dans l'Inbox : ${path}`, 'ok');
+    setStatus(t('savedToInbox', path), 'ok');
     await showVault();
   }).finally(() => {
     save.disabled = false;
@@ -178,7 +180,7 @@ $('copy').addEventListener('click', () =>
   run(async () => {
     await copyMarkdown(currentNote());
     markClean();
-    setStatus('Markdown copié.', 'ok');
+    setStatus(t('markdownCopied'), 'ok');
   }),
 );
 
@@ -186,7 +188,7 @@ $('download').addEventListener('click', () =>
   run(async () => {
     downloadMarkdown(noteFilename(title.value), currentNote());
     markClean();
-    setStatus('Fichier téléchargé.', 'ok');
+    setStatus(t('fileDownloaded'), 'ok');
   }),
 );
 

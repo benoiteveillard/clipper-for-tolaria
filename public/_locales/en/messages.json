@@ -1,0 +1,147 @@
+{
+  "extDescription": {
+    "message": "Clip a web page or a selection into your Tolaria vault Inbox as Markdown. Unofficial."
+  },
+  "actionTitle": {
+    "message": "Clip to Tolaria"
+  },
+  "commandDescription": {
+    "message": "Clip the current page (or selection) to Tolaria"
+  },
+  "menuClip": {
+    "message": "Clip to Tolaria"
+  },
+  "statusIdle": {
+    "message": "Click the extension icon to capture the tab."
+  },
+  "incomingReady": {
+    "message": "New clip ready:"
+  },
+  "incomingReplace": {
+    "message": "Replace"
+  },
+  "incomingKeep": {
+    "message": "Keep my edits"
+  },
+  "labelTitle": {
+    "message": "Title"
+  },
+  "labelType": {
+    "message": "Type"
+  },
+  "labelContent": {
+    "message": "Content"
+  },
+  "duplicateLabel": {
+    "message": "Already clipped:"
+  },
+  "saveToVault": {
+    "message": "Save to vault"
+  },
+  "saveAnyway": {
+    "message": "Save anyway"
+  },
+  "copy": {
+    "message": "Copy"
+  },
+  "downloadMd": {
+    "message": "Download .md"
+  },
+  "openInTolaria": {
+    "message": "Open in Tolaria →"
+  },
+  "vaultLabel": {
+    "message": "Vault:"
+  },
+  "choose": {
+    "message": "Choose…"
+  },
+  "recapture": {
+    "message": "Re-capture"
+  },
+  "extracting": {
+    "message": "Extracting…"
+  },
+  "selectionPrefix": {
+    "message": "Selection · "
+  },
+  "noPageCaptured": {
+    "message": "No page captured."
+  },
+  "vaultNone": {
+    "message": "none"
+  },
+  "fsUnsupportedPanel": {
+    "message": "not supported by this browser (Copy / Download)"
+  },
+  "fsUnsupportedOptions": {
+    "message": "not supported by this browser"
+  },
+  "vaultAccessDenied": {
+    "message": "Vault access denied."
+  },
+  "alreadyInVaultRetry": {
+    "message": "This page is already in the vault: click again to save anyway."
+  },
+  "savedToInbox": {
+    "message": "Saved to the Inbox: $PATH$",
+    "placeholders": {
+      "path": {
+        "content": "$1"
+      }
+    }
+  },
+  "markdownCopied": {
+    "message": "Markdown copied."
+  },
+  "fileDownloaded": {
+    "message": "File downloaded."
+  },
+  "nothingToExtract": {
+    "message": "Nothing to extract on this page."
+  },
+  "pageInaccessible": {
+    "message": "Page not accessible: click the extension icon from the page you want to capture (chrome:// pages and the Web Store are excluded)."
+  },
+  "subfolderDots": {
+    "message": "'.' and '..' are not allowed."
+  },
+  "subfolderChars": {
+    "message": "Forbidden characters in “$NAME$”: \\ : * ? \" < > |",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsVault": {
+    "message": "Vault"
+  },
+  "optionsFolder": {
+    "message": "Folder:"
+  },
+  "optionsPick": {
+    "message": "Choose the vault folder…"
+  },
+  "optionsNotes": {
+    "message": "Notes"
+  },
+  "optionsDefaultType": {
+    "message": "Default type"
+  },
+  "optionsSubfolder": {
+    "message": "Subfolder"
+  },
+  "optionsSubfolderPlaceholder": {
+    "message": "(vault root)"
+  },
+  "optionsSubfolderHint": {
+    "message": "Tolaria organizes by type, not by folder: the root is recommended."
+  },
+  "optionsAuthorWikilink": {
+    "message": "Author as wikilink"
+  },
+  "optionsSaved": {
+    "message": "Saved."
+  }
+}
