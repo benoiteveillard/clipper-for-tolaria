@@ -5,6 +5,7 @@ const listeners: Array<(changes: Record<string, { newValue?: unknown }>, area: s
 const page = { url: 'https://e.com/a', title: 'A', markdown: 'body' };
 
 vi.stubGlobal('browser', {
+  i18n: { getMessage: (key: string) => key },
   storage: {
     session: {
       set: async (items: Record<string, unknown>) => {

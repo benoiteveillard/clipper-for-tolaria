@@ -1,3 +1,4 @@
+import { t } from './i18n';
 import { DEFAULT_NOTE_OPTIONS, type NoteOptions } from './note';
 
 export interface Settings extends NoteOptions {
@@ -10,8 +11,8 @@ export const DEFAULT_SETTINGS: Settings = { ...DEFAULT_NOTE_OPTIONS, subfolder: 
 // getDirectoryHandle, which rejects '.', '..' and names the OS won't accept.
 export function subfolderError(subfolder: string): string | undefined {
   for (const segment of subfolder.split('/').map((s) => s.trim()).filter(Boolean)) {
-    if (segment === '.' || segment === '..') return "'.' et '..' ne sont pas autorisés.";
-    if (/[\\:*?"<>|\u0000-\u001f]/.test(segment)) return `Caractères interdits dans « ${segment} » : \\ : * ? " < > |`;
+    if (segment === '.' || segment === '..') return t('subfolderDots');
+    if (/[\\:*?"<>|\u0000-\u001f]/.test(segment)) return t('subfolderChars', segment);
   }
   return undefined;
 }

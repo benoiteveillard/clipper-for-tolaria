@@ -12,3 +12,4 @@ First public release.
 - One clip per browser window; unsaved edits are kept when a new clip arrives.
 - Copy or download the Markdown as a fallback (the only option on Firefox, which has no File System Access API).
 - Options: default type, subfolder, author as wikilink.
+- Interface in English (default) and French, following the browser's language.

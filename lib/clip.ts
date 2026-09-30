@@ -1,3 +1,4 @@
+import { t } from './i18n';
 import type { ExtractedPage } from './note';
 
 export type PendingClip =
@@ -17,7 +18,7 @@ export interface ClipTarget {
 export async function extractTab(tabId: number): Promise<ExtractedPage> {
   const [injection] = await browser.scripting.executeScript({ target: { tabId }, files: ['/extract.js'] });
   const page = injection?.result as ExtractedPage | undefined;
-  if (!page || (!page.markdown && !page.title)) throw new Error('Rien à extraire sur cette page.');
+  if (!page || (!page.markdown && !page.title)) throw new Error(t('nothingToExtract'));
   return page;
 }
 
@@ -48,7 +49,7 @@ export const clearPendingClip = (windowId: number) => browser.storage.session.re
 function explain(error: unknown): string {
   const message = (error as Error).message ?? String(error);
   if (/cannot access|permission|chrome:\/\/|extensions gallery/i.test(message)) {
-    return "Page inaccessible : clique sur l'icône de l'extension depuis la page à capturer (les pages chrome:// et le Web Store sont exclues).";
+    return t('pageInaccessible');
   }
   return message;
 }

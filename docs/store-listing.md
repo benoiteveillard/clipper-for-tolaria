@@ -12,7 +12,7 @@ Everything to paste into the Chrome Web Store developer dashboard. Keep this fil
 
 **Category:** Productivity → Tools
 
-**Language:** English (a French description is below)
+**Language:** English (default). The extension itself is available in English and French and follows the browser language; the French listing below is optional.
 
 **Description:**
 
@@ -58,9 +58,9 @@ Open source (MIT) : https://github.com/benoiteveillard/clipper-for-tolaria
 
 **Screenshots** (1280×800 or 640×400, PNG or JPEG, at least 1, up to 5). Suggested:
 
-1. Side panel open next to an article, with the extracted note (title, type, content) and the "Enregistrer dans le vault" button.
+1. Side panel open next to an article, with the extracted note (title, type, content) and the "Save to vault" button. Take the screenshots with Chrome in English.
 2. A selection on a page with the right-click "Clip to Tolaria" menu.
-3. The "Déjà clippée" duplicate warning.
+3. The "Already clipped" duplicate warning.
 4. The note open in Tolaria, in the Inbox, showing the properties.
 5. The options page.
 
@@ -97,9 +97,9 @@ Use a public, neutral page (for example a Wikipedia article). Avoid showing priv
 ```
 No account or login is needed.
 1. Open any article, for example https://en.wikipedia.org/wiki/Markdown, and click the extension icon. The side panel opens with the page as Markdown.
-2. Click "Enregistrer dans le vault" and choose any empty folder as the vault. Allow write access. A .md file is created in it.
+2. Click "Save to vault" and choose any empty folder as the vault. Allow write access. A .md file is created in it.
 3. Select some text on the page, then use the right-click menu "Clip to Tolaria": only the selection is clipped.
-The interface is in French; "Enregistrer dans le vault" means "Save to vault".
+The interface follows the browser language (English or French).
 ```
 
 ## Publishing steps
@@ -114,4 +114,3 @@ The interface is in French; "Enregistrer dans le vault" means "Save to vault".
 ## Things to check before submitting
 
 - **Icon and name.** The name is "Clipper for Tolaria", with an "unofficial" notice in the description. The current icon is close to Tolaria's visual identity, which can be flagged as misleading. A distinct icon is safer, and avoids having to change it after a takedown.
-- **Interface language.** The interface is French only. The listing says so in the test instructions; a proper `browser.i18n` setup would make an English store listing more honest.

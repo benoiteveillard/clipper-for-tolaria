@@ -4,16 +4,17 @@ import { defineConfig } from 'wxt';
 export default defineConfig({
   manifest: ({ browser, manifestVersion }) => ({
     name: 'Clipper for Tolaria',
-    description: 'Clip a web page or a selection into your Tolaria vault Inbox as Markdown. Unofficial.',
+    default_locale: 'en',
+    description: '__MSG_extDescription__',
     // chrome.sidePanel needs Chrome 114.
     ...(browser === 'firefox' ? {} : { minimum_chrome_version: '114' }),
     permissions: ['activeTab', 'scripting', 'storage', 'contextMenus', ...(browser === 'firefox' ? [] : ['sidePanel'])],
-    action: { default_title: 'Clip to Tolaria' },
+    action: { default_title: '__MSG_actionTitle__' },
     // Triggers the action's onClicked, so it clips exactly like clicking the icon.
     commands: {
       [manifestVersion === 3 ? '_execute_action' : '_execute_browser_action']: {
         suggested_key: { default: 'Alt+Shift+T' },
-        description: 'Clip the current page (or selection) to Tolaria',
+        description: '__MSG_commandDescription__',
       },
     },
   }),
