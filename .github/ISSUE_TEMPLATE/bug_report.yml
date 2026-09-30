@@ -1,0 +1,40 @@
+name: Bug report
+description: Something doesn't work, or a page is clipped badly
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Page URL
+      description: For a bad extraction, a public URL is usually enough to reproduce. Leave empty if the page is private.
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      placeholder: Chrome 152 on macOS
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Extension version
+      description: Shown on `chrome://extensions`, or the commit you built from.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Select some text
+        2. Press Alt+Shift+T
+        3. ...
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: A screenshot of the side panel helps. Do not paste private page content.
