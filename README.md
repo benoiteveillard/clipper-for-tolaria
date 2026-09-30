@@ -81,7 +81,7 @@ The extension makes no network requests of its own, has no analytics, and sends 
 | `contextMenus` | The right-click entry |
 | `sidePanel` (Chrome) | The panel where you review the note |
 
-The vault folder handle is stored in your browser (IndexedDB) so you don't have to pick it again. Images in a clip stay as links to the original site; they are not downloaded.
+See the full [privacy policy](PRIVACY.md). The vault folder handle is stored in your browser (IndexedDB) so you don't have to pick it again. Images in a clip stay as links to the original site; they are not downloaded.
 
 ## Development
 
