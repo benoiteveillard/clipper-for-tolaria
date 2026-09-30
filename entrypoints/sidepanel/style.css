@@ -1,0 +1,104 @@
+:root {
+  color-scheme: light dark;
+  font: 13px/1.4 system-ui, sans-serif;
+  --accent: #6b4fd8;
+}
+
+body {
+  margin: 0;
+}
+
+/* Author `display` rules (flex on form, #incoming…) would otherwise defeat the hidden attribute. */
+[hidden] {
+  display: none !important;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  font: inherit;
+  font-weight: 400;
+  padding: 6px;
+  border: 1px solid #8884;
+  border-radius: 6px;
+}
+
+textarea {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  resize: vertical;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+button {
+  font: inherit;
+  padding: 6px 10px;
+  border: 1px solid #8886;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+#status[data-kind='error'] {
+  color: #d33;
+}
+
+#status[data-kind='ok'] {
+  color: #2a8;
+}
+
+footer {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  color: #888;
+}
+
+#duplicate,
+#incoming {
+  margin: 0;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: #e8a31c22;
+}
+
+#incoming {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}

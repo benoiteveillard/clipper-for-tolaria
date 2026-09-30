@@ -1,0 +1,48 @@
+{
+  "name": "clipper-for-tolaria",
+  "description": "Clip web pages into your Tolaria vault Inbox.",
+  "license": "MIT",
+  "author": "Benoît Eveillard",
+  "homepage": "https://github.com/benoiteveillard/clipper-for-tolaria#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benoiteveillard/clipper-for-tolaria.git"
+  },
+  "bugs": {
+    "url": "https://github.com/benoiteveillard/clipper-for-tolaria/issues"
+  },
+  "keywords": [
+    "tolaria",
+    "web-clipper",
+    "markdown",
+    "browser-extension"
+  ],
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "test": "vitest run",
+    "fixtures": "node scripts/capture-fixtures.mjs",
+    "postinstall": "wxt prepare"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^30.0.0",
+    "jsdom": "30.0.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.2",
+    "web-ext": "^10.5.0",
+    "ws": "^8.22.0",
+    "wxt": "^0.21.3"
+  },
+  "dependencies": {
+    "defuddle": "^0.19.4",
+    "yaml": "^2.9.1"
+  }
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Spike – écriture vault</title>
+    <style>
+      body { font: 13px/1.5 system-ui, sans-serif; margin: 24px; color-scheme: light dark; }
+      button { margin: 0 6px 6px 0; }
+      pre { background: #8881; padding: 12px; border-radius: 6px; white-space: pre-wrap; }
+    </style>
+  </head>
+  <body>
+    <h1>Spike : FS Access + bridge</h1>
+    <p>
+      Protocole : Choisir → Écrire → quitter Chrome (Cmd+Q) → relancer → rouvrir cette page
+      (<code>chrome-extension://&lt;id&gt;/spike.html</code>) → lire l'état au chargement → Écrire.
+    </p>
+    <button id="pick">1. Choisir le vault</button>
+    <button id="write">2. Écrire spike-*.md</button>
+    <button id="ws">3. Tester ws://localhost:9710 et 9711</button>
+    <button id="clear">Vider le journal</button>
+    <pre id="log"></pre>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    # One PR per week instead of one per package.
+    groups:
+      dev-dependencies:
+        dependency-type: development
+      production-dependencies:
+        dependency-type: production
+    open-pull-requests-limit: 5
+    ignore:
+      # jsdom 30.1.x makes Defuddle extract menus instead of the article in the
+      # snapshot tests. Pinned to 30.0.1 until that is understood.
+      - dependency-name: jsdom
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

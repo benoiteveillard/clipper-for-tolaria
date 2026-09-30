@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Clipper for Tolaria – Options</title>
+    <meta name="manifest.open_in_tab" content="true" />
+    <style>
+      body { font: 14px/1.5 system-ui, sans-serif; max-width: 520px; margin: 32px auto; padding: 0 16px; color-scheme: light dark; }
+      label { display: block; margin: 12px 0; }
+      input[type='text'] { display: block; width: 100%; padding: 6px; font: inherit; box-sizing: border-box; }
+      small { color: #888; }
+    </style>
+  </head>
+  <body>
+    <h1>Clipper for Tolaria</h1>
+
+    <h2>Vault</h2>
+    <p>Dossier : <strong id="vault-name">aucun</strong> <small id="vault-permission"></small></p>
+    <button id="pick" type="button">Choisir le dossier du vault…</button>
+
+    <h2>Notes</h2>
+    <form id="settings">
+      <label>Type par défaut <input type="text" name="type" /></label>
+      <label>
+        Sous-dossier <input type="text" name="subfolder" placeholder="(racine du vault)" />
+        <small>Tolaria range par type, pas par dossier : la racine est recommandée.</small>
+      </label>
+      <label><input type="checkbox" name="authorAsWikilink" /> Auteur en wikilink (<code>"[[jane-doe]]"</code>)</label>
+    </form>
+    <p id="error" role="alert" hidden style="color: #d33"></p>
+    <p id="saved" role="status" hidden>Enregistré.</p>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

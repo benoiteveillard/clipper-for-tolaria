@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clipper for Tolaria</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <p id="status" role="status">Clique sur l'icône de l'extension pour capturer l'onglet.</p>
+
+      <div id="incoming" role="status" hidden>
+        <span>Nouveau clip prêt : <strong id="incoming-title"></strong></span>
+        <span class="actions">
+          <button id="incoming-replace" type="button">Remplacer</button>
+          <button id="incoming-dismiss" type="button">Garder mes modifications</button>
+        </span>
+      </div>
+
+      <form id="clip" hidden>
+        <label>Titre <input id="title" required /></label>
+        <label>Type <input id="type" /></label>
+        <label>Contenu <textarea id="body" rows="14" spellcheck="false"></textarea></label>
+
+        <p id="duplicate" role="status" hidden>Déjà clippée : <a id="duplicate-link"></a></p>
+
+        <div class="actions">
+          <button id="save" type="submit" class="primary">Enregistrer dans le vault</button>
+          <button id="copy" type="button">Copier</button>
+          <button id="download" type="button">Télécharger .md</button>
+        </div>
+        <a id="open" hidden>Ouvrir dans Tolaria →</a>
+      </form>
+
+      <footer>
+        <span>Vault : <strong id="vault-name">—</strong> <small id="vault-permission"></small></span>
+        <span>
+          <button id="pick" type="button">Choisir…</button>
+          <button id="reclip" type="button">Recapturer</button>
+        </span>
+      </footer>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

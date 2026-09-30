@@ -1,0 +1,11 @@
+[
+  {"name": "docs-mdn-file-system-api", "url": "https://developer.mozilla.org/en-US/docs/Web/API/File_System_API"},
+  {"name": "docs-react-thinking", "url": "https://react.dev/learn/thinking-in-react"},
+  {"name": "wikipedia-en-markdown", "url": "https://en.wikipedia.org/wiki/Markdown"},
+  {"name": "wikipedia-fr-markdown", "url": "https://fr.wikipedia.org/wiki/Markdown"},
+  {"name": "github-defuddle-readme", "url": "https://github.com/kepano/defuddle"},
+  {"name": "arxiv-attention", "url": "https://arxiv.org/abs/1706.03762"},
+  {"name": "synthetic-press-article", "url": "https://news.example.com/2026/09/10/calculateur-empreinte?utm_source=newsletter&utm_medium=email&fbclid=abc123", "synthetic": true},
+  {"name": "synthetic-blog-post", "url": "https://blog.example.com/plain-files", "synthetic": true},
+  {"name": "synthetic-social-post", "url": "https://social.example.net/sam/status/1", "synthetic": true}
+]
