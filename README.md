@@ -37,7 +37,17 @@ Body of the article, as Markdown.
 
 ## Install
 
-There is no store listing yet, so build it from source. You need Node.js 22 or later.
+**Chrome Web Store:** the extension has been submitted and is waiting for review. Until it is listed, use one of the two options below.
+
+### From a release (no build needed)
+
+1. Download `clipper-for-tolaria-<version>-chrome.zip` from the [latest release](https://github.com/benoiteveillard/clipper-for-tolaria/releases/latest) and unzip it.
+2. In Chrome, Edge, Brave or Arc, open `chrome://extensions` and turn on **Developer mode**.
+3. Click **Load unpacked** and pick the unzipped folder.
+
+### From source
+
+You need Node.js 22 or later.
 
 ```bash
 git clone https://github.com/benoiteveillard/clipper-for-tolaria.git
@@ -46,10 +56,7 @@ npm install
 npm run build
 ```
 
-Then, in Chrome, Edge, Brave or Arc:
-
-1. Open `chrome://extensions` and turn on **Developer mode**.
-2. Click **Load unpacked** and pick `.output/chrome-mv3`.
+Then load `.output/chrome-mv3` with **Load unpacked** as above.
 
 For Firefox, `npm run build:firefox` produces `.output/firefox-mv2`. Firefox support is experimental: there is no File System Access API there, so you can only copy or download the note.
 
@@ -98,9 +105,10 @@ The interface is in English and French, and follows the language of your browser
 ### Layout
 
 - `entrypoints/`: background script, the injected extraction script, the side panel and the options page
+- `public/_locales/`: the interface text, one folder per language (English and French)
 - `lib/`: extraction mapping, note building, file names, vault access, duplicate detection (the parts covered by tests)
 - `tests/`: unit tests, and snapshot tests that run the extraction on saved pages
-- `docs/spike-results.md`: notes on how writing to a Tolaria vault was validated
+- `docs/`: notes on how writing to a Tolaria vault was validated (`spike-results.md`), and the Chrome Web Store listing (`store-listing.md`)
 
 ### Snapshot tests
 

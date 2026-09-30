@@ -2,6 +2,8 @@
 
 Everything to paste into the Chrome Web Store developer dashboard. Keep this file in sync with what is published.
 
+**Status:** version 0.1.0 submitted for review on 2026-09-30 (ZIP from the [v0.1.0 release](https://github.com/benoiteveillard/clipper-for-tolaria/releases/tag/v0.1.0)). Once it is approved, add the store link to the README.
+
 ## Store listing tab
 
 **Name:** Clipper for Tolaria
@@ -113,4 +115,4 @@ The interface follows the browser language (English or French).
 
 ## Things to check before submitting
 
-- **Icon and name.** The name is "Clipper for Tolaria", with an "unofficial" notice in the description. The current icon is close to Tolaria's visual identity, which can be flagged as misleading. A distinct icon is safer, and avoids having to change it after a takedown.
+- **Icon and name.** The name is "Clipper for Tolaria", with an "unofficial" notice in the description. The current icon is close to Tolaria's visual identity, which can be flagged as misleading. A distinct icon is safer, and avoids having to change it after a takedown. If the review is rejected for this reason, replace the icons in `public/icon/`, bump the version and submit again.
