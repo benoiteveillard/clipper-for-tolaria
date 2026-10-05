@@ -37,7 +37,7 @@ Body of the article, as Markdown.
 
 ## Install
 
-**Chrome Web Store:** the extension has been submitted and is waiting for review. Until it is listed, use one of the two options below.
+**Chrome Web Store:** [Install Clipper for Tolaria](https://chromewebstore.google.com/detail/fepohnckmohlkogdmfdfdilhccmedcdp) (Chrome, Edge, Brave, Arc). Or use one of the two options below.
 
 ### From a release (no build needed)
 
