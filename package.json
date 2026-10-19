@@ -42,7 +42,7 @@
     "wxt": "^0.21.3"
   },
   "dependencies": {
-    "defuddle": "^0.19.4",
+    "defuddle": "^0.19.5",
     "yaml": "^2.9.1"
   }
 }
